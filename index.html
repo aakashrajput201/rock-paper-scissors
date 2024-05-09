@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+ <main>
+  <div class="container">
+    <div class="game-container">
+    <div class="score-board">
+      <img src="/images/logo.svg" alt="logo icon">
+      <div class="score">
+        <p class="scoreText">Score</p>
+        <p class="scoreCount">0</p>
+      </div>
+    </div>
+    <div class="game-board">
+      <div id="paper">      
+      <img class="icon"  src="images/icon-paper.svg" alt="paper">
+      </div>
+      <div id="scissor">      
+      <img class="icon"  src="images/icon-scissors.svg" alt="scissor">
+      </div>
+      <div id="rock">      
+        <img class="icon" src="images/icon-rock.svg" alt="rock">
+        </div>
+    </div>
+    <div class="winner-details hide">
+      <div class="user">
+        <p class="player-label">You Picked</p>
+        <div id="user">      
+          <!-- <img class="icon"  src="images/icon-paper.svg" alt="paper icon"> -->
+          </div>
+      </div>
+      <div class="winner-text">
+        <p id="text"></p>
+        <button class="play-again-btn">Play Again</button>
+      </div>
+      <div class="computer">
+        <p class="player-label">The House Picked</p>
+  
+        <div id="computer">      
+          <!-- <img class="icon"  src="images/icon-paper.svg" alt="paper icon"> -->
+          </div>
+      </div>
+    </div>
+  </div>
+  
+ 
+</main>
+<div class="rules">
+  <button>Rules</button>
+</div>
+<footer class="footer">
+  <div class="info">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href ="https://github.com/aakashrajput201">Aakash Rajput</a>.
+    
+  </div>
+</div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

@@ -14,11 +14,15 @@ let userScore=0;
 buttons.forEach((button)=>button.addEventListener('click',(e)=>{
 console.log(e.target.id)
 userChoice=e.target.alt;
-// user.innerHTML +=document.getElementById(userChoice).innerHTML
+user.appendChild(document.getElementById(userChoice).cloneNode(true))
 
-console.log('first',user, document.getElementById(e.target.alt))
-computersTurn()
-checkResult()
+showResult()
+
+setTimeout(()=>{
+    computersTurn()
+    checkResult()
+},200)
+
 }))
 
 const computersTurn=()=>{
@@ -34,17 +38,15 @@ const computersTurn=()=>{
         computerChoice="scissor";
 
     }
-    console.log("choice",userChoice,computerChoice)
 }
 
 const checkResult=()=>{
     if(userChoice==="rock" && computerChoice==="scissor" || userChoice==="scissor" && computerChoice==="paper" ||userChoice==="paper" && computerChoice==="rock"){
         userScore++;
         score.innerText=userScore
-        user.appendChild(document.getElementById(userChoice).cloneNode(true))
         computer.appendChild(document.getElementById(computerChoice).cloneNode(true)) 
         result.innerHTML+='<p>You Win</p>'
-        showResult()
+        document.querySelector(".play-again-btn").style.color="black"
 
     }
    
@@ -53,19 +55,16 @@ const checkResult=()=>{
             userScore--;
             score.innerText=userScore
         }  
-        user.appendChild(document.getElementById(userChoice).cloneNode(true))
         computer.appendChild(document.getElementById(computerChoice).cloneNode(true)) 
         result.innerHTML+='<p>You Lose</p>'
         document.querySelector(".play-again-btn").style.color="red"
-        showResult()
 
     }
 
     if(computerChoice==="rock" && userChoice==="rock" || computerChoice==="paper" && userChoice==="paper" || computerChoice==="scissor" && userChoice==="scissor"){
-        user.appendChild(document.getElementById(userChoice).cloneNode(true))
         computer.appendChild(document.getElementById(computerChoice).cloneNode(true)) 
         result.innerHTML+="<p>It's a Draw</p>"
-        showResult()
+        document.querySelector(".play-again-btn").style.color="black"
     }
 }
 
@@ -78,10 +77,8 @@ const showResult=()=>{
 }
 
 const playAgain=()=>{
-    // userScore=0;
     gameBoard.classList.remove('hide')
     winnerBoard.classList.add('hide')
-    // score.innerText=0
     user.innerHTML=null;
     computer.innerHTML=null;
     result.innerHTML=null;

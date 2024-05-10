@@ -14,19 +14,18 @@ body {
 }
 
 .container{
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
 .game-container{
-    height: 80vmin;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3.5rem;
+    width: 90%;
+    height: 90%;
+    max-width: 600px;
+    margin-top: 15%;
 }
 
 .game-board {
@@ -34,10 +33,12 @@ body {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    width: 60vmin;
+    width: 100%;
+    margin-top: 35%;
+    gap: 1rem;
 }
 .score-board {
-    width: 60vmin;
+    width: auto;
     height: 10%;
     display: flex;
     justify-content: space-between;
@@ -66,13 +67,14 @@ body {
     font-weight: 700;
 }
 .icon {
-    width: 100px;
-    height: 100px;
+    width: 15vmin;
+    height: 15vmin;
     border-radius: 50%;
     background-color: #fff;
     object-fit: contain;
     color: #3c4261;
     padding: 20px;
+    
 }
 #rock {
     position: relative;
@@ -92,6 +94,10 @@ body {
     padding: 1rem;
     border-radius: 50%;
 }
+
+#rock:hover, #paper:hover, #scissor:hover{
+    box-shadow:0 0 10px 10px rgba(0,0,0,0.6);
+}
 .footer {
   position: fixed;
   bottom: 20px;
@@ -104,17 +110,23 @@ a {
 }
 .winner-details {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 80vmin;
-    height: 50vmin;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-top: 35%;
+
 }
 .winner-details p {
     color: #fff;
     text-transform: uppercase;
 }
 .player-label{
-    margin-bottom: 20px;
+    margin-top: 20px;
+    order: 1;
+}
+.winner-text{
+    order: 2;
 }
 .winner-text p{
     font-size: 1.5rem;
@@ -127,20 +139,74 @@ a {
     font-size: 0.5rem;
     font-weight: 400;
     margin-top: 9px;
+    font-weight: 600;
+
+}
+.play-again-btn:hover{
+    box-shadow:0 0 3px 2px rgba(0,0,0,0.6);
+
 }
 .hide {
      display: none;
 }
-.rules{
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
+.user,.computer{
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
 }
-.rules button{
-    padding: 4px 20px;
-    background:transparent;
-    border: none;
-    color: #fff;
-    outline:hsl(217, 16%, 45%) solid 1px; 
-    border-radius: 5px;
+ #user{
+    
+  
+border-radius: 50%;
 }
+#computer{
+    border-radius: 50%;
+
+
+} 
+@media only screen and (min-width: 520px) {
+ .winner-details{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 35%;
+
+ }
+}
+@media only screen and (min-width: 700px) {
+
+  .game-container{
+   width:85%;
+   margin-top: 4%;
+
+}
+.game-board{
+    margin-top: 10%;
+    width: 80%;
+    margin: 15% auto 0 auto;
+}
+.score-board{
+    height: 12%;
+}
+.winner-details{
+    margin-top: 15%;
+    width: 100%;
+}
+.player-label{
+    margin-bottom: 20px;
+    order: 0;
+}
+.winner-text{
+    order: 0;
+}
+
+.winner-text p{
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+.play-again-btn{
+    padding-inline: 40px;
+    padding-block: 15px;
+    font-size: .8rem;
+}
+}
+    
